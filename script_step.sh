@@ -1,8 +1,11 @@
 odl_user_267122@udacityhol.onmicrosoft.com
 huxz16GFV*yX
 
+cd ../../../
+cd Learning/Udacity/Cloud_Developer/Course5_Performance/git_for_project4/project4_cloud_dev_udactiy
 
-(git bash) az login --user odl_user_269459@udacityhol.onmicrosoft.com --password arvf25KEG*T7
+
+(git bash) az login --user odl_user_269467@udacityhol.onmicrosoft.com --password mukx77HAG*0V
 
 
 (git bash) sh setup-script.sh
@@ -10,8 +13,8 @@ huxz16GFV*yX
 
 
 az vmss list-instance-connection-info --resource-group cloud-project4  --name udacity-vmss 
-ssh -p 50001 udacityadmin@52.163.55.43
-ssh -p 50003 udacityadmin@52.163.55.43
+ssh -p 50000 udacityadmin@13.76.166.213
+ssh -p 50001 udacityadmin@13.76.166.213
 
 
 --> vào load balancer chỉnh lại load balancer rule (gắn probe pool)
@@ -79,7 +82,7 @@ vào vmss tạo alert-> tạo action group để gửi mail-> tạo alert rule
 	docker container ls
 	docker container ps -a
 	docker images
-	cd /d D:\udacity\Cloud_Developer_using_Microsoft_Azure\project_4\Cloud_Developer_using_Microsoft_Azure_project_4\azure-vote
+	cd /d D:\Learning\Udacity\Cloud_Developer\Course5_Performance\git_for_project4\project4-cloud-dev-udacity\azure-vote
 	docker-compose up -d --build
 	docker-compose down
 
@@ -94,6 +97,12 @@ vào vmss tạo alert-> tạo action group để gửi mail-> tạo alert rule
 
 
 --cloud
+
+(git bash) cd /d/Learning/Udacity/Cloud_Developer/Course5_Performance/git_for_project4/project4-cloud-dev-udacity
+(git bash) sh create-acr.sh
+(git bash) sh create-cluster.sh
+
+
 
 (powershell) while ($true) { curl http://135.237.110.24 }
 

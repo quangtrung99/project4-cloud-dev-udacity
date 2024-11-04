@@ -27,7 +27,7 @@ stats = stats_module.stats
 view_manager = stats.view_manager
 config_integration.trace_integrations(["logging"])
 config_integration.trace_integrations(["requests"])
-InstrumentationKey = "InstrumentationKey=57341318-4c90-48f7-8cd6-b7084efd7be3"
+InstrumentationKey = "InstrumentationKey=924d4d04-ac36-4a12-981b-11486ed8ba35"
 
 
 # Logging
@@ -90,7 +90,17 @@ else:
     title = app.config['TITLE']
 
 # Redis Connection
-r = redis.Redis()
+redis_server = os.environ['REDIS']
+try:
+    if "REDIS_PWD" in os.environ:
+        r = redis.StrictRedis(host=redis_server,
+                        port=6379,
+                        password=os.environ['REDIS_PWD'])
+    else:
+        r = redis.Redis(redis_server)
+    r.ping()
+except redis.ConnectionError:
+    exit('Failed to connect to Redis, terminating.')
 
 # Change title to host name to demo NLB
 if app.config['SHOWHOST'] == "true":
