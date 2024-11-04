@@ -41,6 +41,24 @@ python3 -m venv project4
 source project4/bin/activate
 
 
+# test
+sudo add-apt-repository -y ppa:redislabs/redis
+sudo apt-get update
+sudo apt-get install -y redis
+redis-cli ping
+
+sudo apt update
+sudo apt install -y software-properties-common
+sudo add-apt-repository -y ppa:deadsnakes/ppa
+sudo apt install -y python3.9
+
+sudo apt install -y python3-pip --upgrade python3-pip
+sudo apt install -y python3.10-venv
+python3 -m venv project4
+source project4/bin/activate
+
+# 
+
 git clone https://github.com/quangtrung99/project4-cloud-dev-udacity
 cd project4-cloud-dev-udacity
 # git checkout Deploy_to_VMSS
@@ -48,6 +66,8 @@ pip install -r requirements.txt
 python azure-vote/main.py
 
 
+git pull
+python azure-vote/main.py
 
 
 --setup auto scale VMSS
