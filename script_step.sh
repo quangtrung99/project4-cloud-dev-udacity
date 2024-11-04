@@ -10,8 +10,8 @@ huxz16GFV*yX
 
 
 az vmss list-instance-connection-info --resource-group cloud-project4  --name udacity-vmss 
-ssh -p 50001 udacityadmin@108.143.4.116
-ssh -p 50002 udacityadmin@108.143.4.116
+ssh -p 50001 udacityadmin@52.163.55.43
+ssh -p 50003 udacityadmin@52.163.55.43
 
 
 --> vào load balancer chỉnh lại load balancer rule (gắn probe pool)
@@ -41,9 +41,9 @@ python3 -m venv project4
 source project4/bin/activate
 
 
-git clone https://github.com/cedar-f/Cloud_Developer_using_Microsoft_Azure_project_4.git
-cd Cloud_Developer_using_Microsoft_Azure_project_4
-git checkout Deploy_to_VMSS
+git clone https://github.com/quangtrung99/project4-cloud-dev-udacity
+cd project4-cloud-dev-udacity
+# git checkout Deploy_to_VMSS
 pip install -r requirements.txt
 python azure-vote/main.py
 
