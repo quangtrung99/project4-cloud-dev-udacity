@@ -12,9 +12,9 @@ az acr login --name $myAcrName
 # Find the login server address of your registry
 az acr show --name $myAcrName --query loginServer --output table
 # Associate a tag to the local image
-docker tag azure-vote-front:v1 $myAcrName.azurecr.io/azure-vote-front:v1
+docker tag azure-vote-front:v1 cloudproject4acr.azurecr.io/azure-vote-front:v1
 # Now you will see project4acr.azurecr.io/azure-vote-front:v1 if you run docker images
 # Push the local registry to remote
-docker push $myAcrName.azurecr.io/azure-vote-front:v1
+docker push cloudproject4acr.azurecr.io/azure-vote-front:v1
 # Verify if you image is up in the cloud.
-az acr repository list --name $myAcrName.azurecr.io --output table
+az acr repository list --name cloudproject4acr.azurecr.io --output table

@@ -2,7 +2,7 @@
 
 # Variables
 resourceGroup="cloud-project4"
-clusterName="udacity-cluster"
+clusterName="udacity-cluster-2"
 region="southeastasia"
 myAcrName="cloudproject4acr"
 
@@ -40,7 +40,7 @@ echo "Step 1 - Creating AKS cluster $clusterName"
 # This command will is a substitute for "--enable-addons monitoring" option in the "az aks create"
 # Use the log analytics workspace - Resource ID
 # For Cloud Lab users, go to the existing Log Analytics workspace --> Properties --> Resource ID. Copy it and use in the command below.
-az aks enable-addons -a monitoring -n $clusterName -g $resourceGroup --workspace-resource-id "/subscriptions/8b29b552-f66a-4753-a52b-4c6cda8e9680/resourcegroups/cloud-demo/providers/microsoft.operationalinsights/workspaces/loganalytics-267259"
+az aks enable-addons -a monitoring -n $clusterName -g $resourceGroup --workspace-resource-id "/subscriptions/5575e80b-f0da-4822-a386-38229fd50c58/resourceGroups/cloud-demo/providers/Microsoft.OperationalInsights/workspaces/loganalytics-269467"
 echo "AKS cluster created: $clusterName"
 
 # Connect to AKS cluster
@@ -68,4 +68,4 @@ az acr show --name $myAcrName --query loginServer --output table
 kubectl set image deployment azure-vote-front azure-vote-front=$myAcrName.azurecr.io/azure-vote-front:v1
 kubectl get service
 kubectl get pods
-kubectl autoscale deployment azure-vote-front --cpu-percent=50 --min=1 --max=10
+kubectl autoscale deployment azure-vote-front --cpu-percent=30 --min=1 --max=10
